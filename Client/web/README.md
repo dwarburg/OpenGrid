@@ -1,69 +1,94 @@
 # OpenGrid Web Client
 
-This is the web-based frontend for the OpenGrid project, built with vanilla JavaScript, MapLibre GL JS, and OpenLayers.
+This is the web-based frontend for the OpenGrid project, built with React, MapLibre GL JS, and OpenLayers.
 
-## Features
+## Prerequisites
 
-- Interactive map visualization using MapLibre GL JS
-- Toggle between MapLibre and OpenLayers
-- Responsive design
-- No build step required
-- Works in any modern browser
+- Node.js 16+
+- npm or yarn
 
 ## Getting Started
 
-1. **Prerequisites**
-   - Modern web browser (Chrome, Firefox, Safari, or Edge)
-   - (Optional) A local web server for development (e.g., Python's http.server)
-
-2. **Quick Start**
-   Simply open `index.html` in your web browser to run the application.
-
-3. **Development**
-   - Edit `app.js` for application logic
-   - Modify `styles.css` for custom styling
-   - Update `index.html` for structural changes
-
-4. **Using a Local Server (Optional)**
+1. Install dependencies:
    ```bash
-   # Python 3
-   python -m http.server 8000 --directory /path/to/client/web
-   
-   # Then open http://localhost:8000 in your browser
+   npm install
+   # or
+   yarn install
    ```
+
+2. Create a `.env` file in the `client/web` directory:
+   ```
+   REACT_APP_API_URL=http://localhost:8000/api/v1
+   REACT_APP_MAPBOX_ACCESS_TOKEN=your-mapbox-token-here
+   ```
+
+3. Start the development server:
+   ```bash
+   npm start
+   # or
+   yarn start
+   ```
+
+4. Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 ## Project Structure
 
 ```
-client/web/
-├── index.html      # Main HTML file
-├── app.js          # Application logic
-└── styles.css      # Styling
+src/
+├── components/       # Reusable UI components
+│   ├── Map/         # Map component
+│   ├── Sidebar/     # Sidebar component
+│   ├── Toolbar/     # Toolbar with actions
+│   └── common/      # Common UI components
+├── hooks/           # Custom React hooks
+├── services/        # API service layer
+├── store/           # State management
+├── types/           # TypeScript type definitions
+├── utils/           # Utility functions
+├── App.tsx          # Main application component
+└── index.tsx        # Application entry point
 ```
 
-## Dependencies
+## Available Scripts
 
-- MapLibre GL JS (loaded via CDN)
-- OpenLayers (loaded via CDN)
-
-## Browser Support
-
-- Chrome (latest)
-- Firefox (latest)
-- Safari (latest)
-- Edge (latest)
+- `npm start` or `yarn start`: Start the development server
+- `npm test` or `yarn test`: Run tests
+- `npm run build` or `yarn build`: Build for production
+- `npm run lint` or `yarn lint`: Run linter
+- `npm run format` or `yarn format`: Format code
 
 ## Development
 
-### Adding New Features
-1. Add new JavaScript functionality in `app.js`
-2. Style new components in `styles.css`
-3. Update the UI in `index.html` as needed
+### Adding Dependencies
 
-### Customization
-- To change map styles, modify the style URLs in `index.html`
-- Update colors and layout in `styles.css`
-- Add new map layers and controls in `app.js`
+Use npm or yarn to add new dependencies:
+
+```bash
+npm install package-name
+# or
+yarn add package-name
+```
+
+### Styling
+
+This project uses [Tailwind CSS](https://tailwindcss.com/) for styling. You can find the configuration in `tailwind.config.js`.
+
+### Environment Variables
+
+- `REACT_APP_API_URL`: Base URL for the API
+- `REACT_APP_MAPBOX_ACCESS_TOKEN`: Mapbox access token for map tiles
+
+## Deployment
+
+To create a production build:
+
+```bash
+npm run build
+# or
+yarn build
+```
+
+This will create an optimized production build in the `build` directory.
 
 ## License
 
