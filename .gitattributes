@@ -1,0 +1,51 @@
+# .gitattributes for cross-platform line ending normalization
+
+# Set default behavior to automatically normalize line endings
+* text=auto
+
+# Explicitly declare text files to be normalized
+*.c     text
+*.cpp   text
+*.h     text
+*.hpp   text
+*.js    text
+*.jsx   text
+*.ts    text
+*.tsx   text
+*.json  text
+*.css   text
+*.scss  text
+*.md    text
+*.yml   text
+*.yaml  text
+*.sh    text eol=lf
+*.sql   text eol=lf
+*.py    text eol=lf
+*.html  text
+*.xml   text
+*.csv   text
+*.txt   text
+*.bat   text eol=crlf
+*.ps1   text eol=crlf
+
+# Binary files (no normalization)
+*.png   binary
+*.jpg   binary
+*.jpeg  binary
+*.gif   binary
+*.ico   binary
+*.pdf   binary
+*.zip   binary
+*.gz    binary
+*.tar   binary
+*.mp3   binary
+*.mp4   binary
+*.mov   binary
+*.exe   binary
+*.dll   binary
+*.so    binary
+*.bin   binary
+
+# Prevent normalization for lock files
+package-lock.json -text
+yarn.lock -text
