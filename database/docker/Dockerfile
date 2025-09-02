@@ -7,6 +7,7 @@ RUN apt-get update && \
     postgresql-15-pgrouting-scripts \
     postgresql-15-postgis-3 \
     postgresql-15-postgis-3-scripts \
+    postgresql-15-tableversion \
     && rm -rf /var/lib/apt/lists/*
 
 # Create directory for initialization scripts
